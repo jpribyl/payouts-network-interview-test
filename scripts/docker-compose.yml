@@ -23,7 +23,11 @@ services:
       - cluster.name=wonder-cluster
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms128m -Xmx128m"
+      - "ES_HEAP_SIZE=128m"
     ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
       memlock:
         soft: -1
         hard: -1
