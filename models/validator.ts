@@ -10,7 +10,9 @@ export default async function Validate(model, body) {
     return {
       status: 'fail',
       response: {
-        status: 400,
+        statusCode: 400,
+        headers: {},
+        isBase64Encoded: false,
         body: 'error: ' + e,
       },
     };
@@ -26,7 +28,9 @@ export default async function Validate(model, body) {
       return {
         status: 'fail',
         response: {
-          status: 400,
+          statusCode: 400,
+          headers: {},
+          isBase64Encoded: false,
           body: 'error: ' + key + 'MustBeUnique',
         },
       };

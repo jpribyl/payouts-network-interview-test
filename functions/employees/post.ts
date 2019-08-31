@@ -14,8 +14,10 @@ export const postEmployee = async function(
     const r = await Employee.query().insert(body);
 
     return {
-      status: 200,
+      statusCode: 200,
       body: JSON.stringify(r),
+      headers: {},
+      isBase64Encoded: false,
     };
   } else {
     return validationStatus.response;

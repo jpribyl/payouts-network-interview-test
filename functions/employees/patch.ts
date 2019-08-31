@@ -12,14 +12,18 @@ export const patchEmployee = async function(
       .where('id', body.id);
 
     return {
-      status: 200,
+      statusCode: 200,
       body: 'User activated',
+      headers: {},
+      isBase64Encoded: false,
     };
   } catch (e) {
     console.log(e);
     return {
-      status: 400,
+      statusCode: 400,
       body: 'error: ' + e,
+      headers: {},
+      isBase64Encoded: false,
     };
   }
 };
