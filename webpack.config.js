@@ -11,6 +11,9 @@ module.exports = {
   mode: slsw.lib.webpack.isLocal ? 'development' : 'production',
   entry: entries,
   devtool: 'source-map',
+  optimization: {
+    minimize: false,
+  },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
   },
@@ -31,14 +34,14 @@ module.exports = {
             options: {
               transpileOnly: true,
               happyPackMode: true,
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
       {
         type: 'javascript/auto',
         test: /\.mjs$/,
-        use: []
+        use: [],
       },
     ],
   },
