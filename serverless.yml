@@ -12,15 +12,39 @@ provider:
   # Environment variables for all functions in this service
   environment:
     NODE_ENV: ${opt:nodeEnv, self:provider.stage}
+    MYSQL_HOST: 'localhost'
+    MYSQL_DATABASE: ${ssm:MYSQL_DATABASE}
+    MYSQL_USER: ${ssm:MYSQL_USER}
+    MYSQL_PASSWORD: ${ssm:MYSQL_PASSWORD}
+    MYSQL_PORT: ${ssm:MYSQL_PORT}
     # Add environment variables here such as mysql connection information, elasticsearch connection information, etc.
 
 functions:
-  helloGet:
-    handler: handler.helloGet # Hint: Observe the way the exports work in each of the {folder}/index.ts files
-    name: helloGet
+  getEmployees:
+    handler: handler.getEmployees
+    name: getEmployees
     events:
     - http:
-        path: hello
+        path: employees
         method: get
-    environment:
-      # You can use function specific environment variables here (not required)
+  postEmployee:
+    handler: handler.postEmployee
+    name: postEmployee
+    events:
+    - http:
+        path: employees
+        method: post
+  patchEmployee:
+    handler: handler.patchEmployee
+    name: patchEmployee
+    events:
+    - http:
+        path: employees/{id}
+        method: patch
+  deleteEmployee:
+    handler: handler.deleteEmployee
+    name: deleteEmployee
+    events:
+    - http:
+        path: employees/{id}
+        method: delete

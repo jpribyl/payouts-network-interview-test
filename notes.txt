@@ -1,0 +1,23 @@
+1. read requirements
+2. create jira account and write / estimate tickets
+3. create free aws account and verify docker deployment to ecs
+4. build out db tables, columns, dummy data, constraints
+
+5. deploy be to ecs
+    update memory to be in free tier
+    may need to install jdk with yum
+    update max vm memory
+        in /etc/sysctl.conf
+        add 'vm.max_map_count=262144'
+    update max files open
+        ulimits in docker-compose.yml
+
+6. build out basic endpoints and dummy migration in case the model changes
+7. build out model for schema validation using objection.js
+8. complete crud endpoints as dictated in requirements
+
+
+questions:
+are all fields required?
+do we allow for 9 digit zip or require 5 digit?
+is it possible that there may be a third status at some future time (ie pending)?

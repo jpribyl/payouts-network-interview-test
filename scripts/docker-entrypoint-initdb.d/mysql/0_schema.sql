@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `employees`.`employees` (
   `street_address` VARCHAR(50) NULL,
   `city` VARCHAR(25) NULL,
   `zip_code` VARCHAR(10) NULL,
-  `status` VARCHAR(20) NULL,
+  `status` VARCHAR(20) NULL DEFAULT 'active',
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC),
   INDEX `fk_employees_1_idx` (`state_id` ASC),
