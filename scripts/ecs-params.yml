@@ -2,6 +2,6 @@ version: 1
 task_definition:
   services:
     mysql:
-      mem_limit: "128m"
+      mem_limit: "400m"
     elasticsearch:
-      mem_limit: "800m"
+      mem_limit: "400m"
