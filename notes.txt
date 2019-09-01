@@ -16,7 +16,8 @@
 7. build out model for schema validation using objection.js
 8. complete crud endpoints as dictated in requirements
 9. deploy to serverless, update webpack to avoid minimization
-10. bootstrap react app
+10. export insomnia data to file
+11. bootstrap react app (yay!)
 
 
 questions:
@@ -24,3 +25,4 @@ are all fields required?
 do we allow for 9 digit zip or require 5 digit?
 is it possible that there may be a third status at some future time (ie pending)?
 default new user to active or inactive?
+is it possible to get an svg of the logout icon?

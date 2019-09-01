@@ -7,7 +7,11 @@ export const getEmployees = async function(
   console.log(event);
 
   const { page } = { ...event.queryStringParameters };
-  const r = await knex('employees').paginate(page);
+  const r = await knex
+    .select('employees.*', 'states.abbreviation as state_abbreviation')
+    .from('employees')
+    .leftJoin('states', 'employees.state_id', 'states.id')
+    .paginate(page);
 
   return {
     statusCode: 200,

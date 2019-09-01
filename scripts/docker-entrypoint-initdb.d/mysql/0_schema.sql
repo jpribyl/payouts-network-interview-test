@@ -87,6 +87,7 @@ CREATE TABLE IF NOT EXISTS `employees`.`employees` (
   `first_name` VARCHAR(100) NOT NULL,
   `last_name` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
+  `phone` VARCHAR(20) NOT NULL,
   `state_id` INT NOT NULL,
   `street_address` VARCHAR(50) NOT NULL,
   `city` VARCHAR(25) NOT NULL,
@@ -102,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `employees`.`employees` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-INSERT into `employees`.`employees` (`first_name`, `last_name`, `email`) values ('Admin', 'McAdmin', 'admin@mcadmin.co');
+INSERT into `employees`.`employees` (`first_name`, `last_name`, `email`, `phone`, `state_id`, `street_address`, `city`, `zip_code`, `status`) values ('Admin', 'McAdmin', 'admin@mcadmin.co', '406-555-5555', 2, '123 e Main', 'Bozeman', '59715', 'active');
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
