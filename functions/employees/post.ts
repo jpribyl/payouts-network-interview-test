@@ -7,6 +7,7 @@ export const postEmployee = async function(
   event: APIGatewayEvent
 ): Promise<any> {
   const body = JSON.parse(event.body);
+  //console.log(event);
 
   const validationStatus = await Validate(Employee, body);
 

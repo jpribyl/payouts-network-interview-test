@@ -5,7 +5,7 @@ export const patchEmployee = async function(
   event: APIGatewayEvent
 ): Promise<any> {
   const body = event.pathParameters;
-  console.log(event);
+  //console.log(event);
   try {
     const r = await Employee.query()
       .patch({ status: 'active' })
@@ -18,7 +18,7 @@ export const patchEmployee = async function(
       isBase64Encoded: false,
     };
   } catch (e) {
-    console.log(e);
+    //console.log(e);
     return {
       statusCode: 400,
       body: 'error: ' + e,
