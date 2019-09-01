@@ -1,0 +1,198 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2019-08-31T23:56:47.147Z",
+	"__export_source": "insomnia.desktop.app:v6.3.2",
+	"resources": [
+		{
+			"_id": "wrk_109afe15c7fe470ea493b52eb270bb41",
+			"created": 1567281814671,
+			"description": "",
+			"modified": 1567281814671,
+			"name": "pn-interview",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_76d82116c4624d47a6e22c5cf5b7a0b2",
+			"color": null,
+			"created": 1567281814829,
+			"data": {},
+			"isPrivate": false,
+			"metaSortKey": 1567281814829,
+			"modified": 1567295665011,
+			"name": "New Environment",
+			"parentId": "wrk_109afe15c7fe470ea493b52eb270bb41",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_6615d9461aae4316b816f7c818c1f8eb",
+			"cookies": [],
+			"created": 1567281814832,
+			"modified": 1567281814832,
+			"name": "Default Jar",
+			"parentId": "wrk_109afe15c7fe470ea493b52eb270bb41",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_6fe3c42071744ee582f6a70813e630db",
+			"created": 1567281859777,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1567281859777,
+			"modified": 1567281859777,
+			"name": "employees",
+			"parentId": "wrk_109afe15c7fe470ea493b52eb270bb41",
+			"_type": "request_group"
+		},
+		{
+			"_id": "env_d91011723bcb440290b9ad3341e19141",
+			"color": "#7d69cb",
+			"created": 1567295575807,
+			"data": {
+				"api_base": "localhost:9999",
+				"employee_id": 2
+			},
+			"isPrivate": false,
+			"metaSortKey": 1567295575807,
+			"modified": 1567295669026,
+			"name": "local",
+			"parentId": "env_76d82116c4624d47a6e22c5cf5b7a0b2",
+			"_type": "environment"
+		},
+		{
+			"_id": "env_51354a0680e045558e2f91866181fa96",
+			"color": "#cb697b",
+			"created": 1567295590273,
+			"data": {
+				"api_base": "https://90mqs1t2df.execute-api.us-east-1.amazonaws.com/dev/",
+				"employee_id": 1
+			},
+			"isPrivate": false,
+			"metaSortKey": 1567295590273,
+			"modified": 1567295652678,
+			"name": "remote",
+			"parentId": "env_76d82116c4624d47a6e22c5cf5b7a0b2",
+			"_type": "environment"
+		},
+		{
+			"_id": "req_74041825f62d4762b0c8a960dee8aade",
+			"authentication": {},
+			"body": {},
+			"created": 1567281871219,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1567281871220,
+			"method": "GET",
+			"modified": 1567290297267,
+			"name": "get employees",
+			"parameters": [],
+			"parentId": "fld_6fe3c42071744ee582f6a70813e630db",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_base  }}/employees",
+			"_type": "request"
+		},
+		{
+			"_id": "req_0bf30f928c664f31934c56abce47e7eb",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"first_name\": \"Jerry\",\n\t\"last_name\": \"Smith\",\n\t\"email\": \"jerry@smith.co\",\n\t\"street_address\": \"123 e Main\",\n\t\"city\": \"Bozeman\",\n\t\"zip_code\": \"59715\",\n\t\"state_id\": 2\n}"
+			},
+			"created": 1567281926926,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_1027ea3a5d5f498c9e2c92b1e4a23795",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1563258391912,
+			"method": "POST",
+			"modified": 1567289559213,
+			"name": "create employee",
+			"parameters": [],
+			"parentId": "fld_6fe3c42071744ee582f6a70813e630db",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_base  }}/employees",
+			"_type": "request"
+		},
+		{
+			"_id": "req_cd2df46b0efb44cf9a1ccd3e5b1d2d1e",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1567281943596,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7aec1aceb4064e17b1738743f2e561a4",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1561246652258,
+			"method": "PATCH",
+			"modified": 1567290941435,
+			"name": "activate employee",
+			"parameters": [],
+			"parentId": "fld_6fe3c42071744ee582f6a70813e630db",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_base  }}/employees/{{ employee_id  }}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c1ec423272df4eb592601f4f51ceb1a5",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1567281957768,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_85d462f973ce485e8fe4bc99dae6ca3e",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1560240782431,
+			"method": "DELETE",
+			"modified": 1567290947885,
+			"name": "deactivate employee",
+			"parameters": [],
+			"parentId": "fld_6fe3c42071744ee582f6a70813e630db",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_base  }}/employees/{{ employee_id  }}",
+			"_type": "request"
+		}
+	]
+}
