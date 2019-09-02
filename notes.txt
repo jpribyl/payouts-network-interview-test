@@ -21,8 +21,21 @@
 
 
 questions:
+
 are all fields required?
+
 do we allow for 9 digit zip or require 5 digit?
+
 is it possible that there may be a third status at some future time (ie pending)?
+
 default new user to active or inactive?
-is it possible to get an svg of the logout icon?
+
+is it possible to get an svg of the logout icons? also are icons on sidebar
+meant to change based on page the two on manage recipients look a bit like the one on
+create recipients was split apart.
+
+how should pagination function? according to the mock ups it looks like we
+should include all results from the first page but increase the number shown
+upon clicking "view more" -- this is not as performant as having multiple pages
+and limiting the number rendered at one time but effects will be negligible
+until showing 1000s of rows.

@@ -6,12 +6,25 @@ export const getEmployees = async function(
 ): Promise<any> {
   //console.log(event);
 
-  const { page } = { ...event.queryStringParameters };
-  const r = await knex
-    .select('employees.*', 'states.abbreviation as state_abbreviation')
-    .from('employees')
-    .leftJoin('states', 'employees.state_id', 'states.id')
-    .paginate(page);
+  const { page, perPage, sort, sortDirection } = {
+    ...event.queryStringParameters,
+  };
+
+  let r;
+  if (sort !== 'undefined' && sortDirection !== 'undefined') {
+    r = await knex
+      .select('employees.*', 'states.abbreviation as state_abbreviation')
+      .from('employees')
+      .leftJoin('states', 'employees.state_id', 'states.id')
+      .orderBy(sort, sortDirection)
+      .paginate(page, perPage);
+  } else {
+    r = await knex
+      .select('employees.*', 'states.abbreviation as state_abbreviation')
+      .from('employees')
+      .leftJoin('states', 'employees.state_id', 'states.id')
+      .paginate(page, perPage);
+  }
 
   return {
     statusCode: 200,
