@@ -9,7 +9,9 @@ export const getStates = async function(event: APIGatewayEvent): Promise<any> {
   return {
     statusCode: 200,
     body: JSON.stringify(r),
-    headers: {},
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
     isBase64Encoded: false,
   };
 };

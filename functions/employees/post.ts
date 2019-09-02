@@ -17,7 +17,9 @@ export const postEmployee = async function(
     return {
       statusCode: 200,
       body: JSON.stringify(r),
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
       isBase64Encoded: false,
     };
   } else {

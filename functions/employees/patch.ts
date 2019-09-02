@@ -22,7 +22,9 @@ export const patchEmployee = async function(
     return {
       statusCode: 400,
       body: 'error: ' + e,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
       isBase64Encoded: false,
     };
   }
