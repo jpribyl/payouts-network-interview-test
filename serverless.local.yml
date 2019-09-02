@@ -6,14 +6,13 @@ plugins:
   - serverless-offline
 
 provider:
-  name: aws
+  name: local
   runtime: nodejs8.10
   stage: ${opt:stage, 'dev'}
-  region: us-east-1
   # Environment variables for all functions in this service
   environment:
     NODE_ENV: ${opt:nodeEnv, self:provider.stage}
-    MYSQL_HOST: '34.201.12.7'
+    MYSQL_HOST: 'localhost'
     MYSQL_DATABASE: ${ssm:MYSQL_DATABASE}
     MYSQL_USER: ${ssm:MYSQL_USER}
     MYSQL_PASSWORD: ${ssm:MYSQL_PASSWORD}
@@ -21,6 +20,13 @@ provider:
     # Add environment variables here such as mysql connection information, elasticsearch connection information, etc.
 
 functions:
+  getStates:
+    handler: handler.getStates
+    name: getStates
+    events:
+    - http:
+        path: states
+        method: get
   getEmployees:
     handler: handler.getEmployees
     name: getEmployees
