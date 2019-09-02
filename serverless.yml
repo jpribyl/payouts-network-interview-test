@@ -28,6 +28,7 @@ functions:
     - http:
         path: states
         method: get
+        cors: true
   getEmployees:
     handler: handler.getEmployees
     name: getEmployees
@@ -35,6 +36,7 @@ functions:
     - http:
         path: employees
         method: get
+        cors: true
   postEmployee:
     handler: handler.postEmployee
     name: postEmployee
@@ -42,6 +44,7 @@ functions:
     - http:
         path: employees
         method: post
+        cors: true
   patchEmployee:
     handler: handler.patchEmployee
     name: patchEmployee
@@ -49,6 +52,7 @@ functions:
     - http:
         path: employees/{id}
         method: patch
+        cors: true
   deleteEmployee:
     handler: handler.deleteEmployee
     name: deleteEmployee
@@ -56,3 +60,4 @@ functions:
     - http:
         path: employees/{id}
         method: delete
+        cors: true
