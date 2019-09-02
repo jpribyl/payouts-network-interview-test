@@ -6,13 +6,14 @@ plugins:
   - serverless-offline
 
 provider:
-  name: local
+  name: aws
   runtime: nodejs8.10
   stage: ${opt:stage, 'dev'}
+  region: us-east-1
   # Environment variables for all functions in this service
   environment:
     NODE_ENV: ${opt:nodeEnv, self:provider.stage}
-    MYSQL_HOST: 'localhost'
+    MYSQL_HOST: '34.201.12.7'
     MYSQL_DATABASE: ${ssm:MYSQL_DATABASE}
     MYSQL_USER: ${ssm:MYSQL_USER}
     MYSQL_PASSWORD: ${ssm:MYSQL_PASSWORD}
@@ -27,6 +28,7 @@ functions:
     - http:
         path: states
         method: get
+        cors: true
   getEmployees:
     handler: handler.getEmployees
     name: getEmployees
@@ -34,6 +36,7 @@ functions:
     - http:
         path: employees
         method: get
+        cors: true
   postEmployee:
     handler: handler.postEmployee
     name: postEmployee
@@ -41,6 +44,7 @@ functions:
     - http:
         path: employees
         method: post
+        cors: true
   patchEmployee:
     handler: handler.patchEmployee
     name: patchEmployee
@@ -48,6 +52,7 @@ functions:
     - http:
         path: employees/{id}
         method: patch
+        cors: true
   deleteEmployee:
     handler: handler.deleteEmployee
     name: deleteEmployee
@@ -55,3 +60,4 @@ functions:
     - http:
         path: employees/{id}
         method: delete
+        cors: true

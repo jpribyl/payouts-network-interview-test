@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2019-08-31T23:56:47.147Z",
+	"__export_date": "2019-09-02T18:22:32.724Z",
 	"__export_source": "insomnia.desktop.app:v6.3.2",
 	"resources": [
 		{
@@ -46,6 +46,17 @@
 			"_type": "request_group"
 		},
 		{
+			"_id": "fld_5b40cfe66c8c4040a19d0820fdc9cbfc",
+			"created": 1567371688154,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1567371688154,
+			"modified": 1567371688154,
+			"name": "states",
+			"parentId": "wrk_109afe15c7fe470ea493b52eb270bb41",
+			"_type": "request_group"
+		},
+		{
 			"_id": "env_d91011723bcb440290b9ad3341e19141",
 			"color": "#7d69cb",
 			"created": 1567295575807,
@@ -85,7 +96,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1567281871220,
 			"method": "GET",
-			"modified": 1567290297267,
+			"modified": 1567448526259,
 			"name": "get employees",
 			"parameters": [],
 			"parentId": "fld_6fe3c42071744ee582f6a70813e630db",
@@ -95,7 +106,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "{{ api_base  }}/employees",
+			"url": "{{ api_base  }}/employees?page=1&sort=email&sortDirection=desc",
 			"_type": "request"
 		},
 		{
@@ -103,7 +114,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"first_name\": \"Jerry\",\n\t\"last_name\": \"Smith\",\n\t\"email\": \"jerry@smith.co\",\n\t\"street_address\": \"123 e Main\",\n\t\"city\": \"Bozeman\",\n\t\"zip_code\": \"59715\",\n\t\"state_id\": 2\n}"
+				"text": "{\n\t\"first_name\": \"Jerry\",\n\t\"last_name\": \"Smith\",\n\t\"phone\": \"406-234-4566\",\n\t\"email\": \"jerry@smith.co\",\n\t\"street_address\": \"123 e Main\",\n\t\"city\": \"Bozeman\",\n\t\"zip_code\": \"59715\",\n\t\"state_id\": 2\n}"
 			},
 			"created": 1567281926926,
 			"description": "",
@@ -117,7 +128,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1563258391912,
 			"method": "POST",
-			"modified": 1567289559213,
+			"modified": 1567382987866,
 			"name": "create employee",
 			"parameters": [],
 			"parentId": "fld_6fe3c42071744ee582f6a70813e630db",
@@ -192,6 +203,29 @@
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
 			"url": "{{ api_base  }}/employees/{{ employee_id  }}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_8ba856925d2c4ef9b6644b7046d48ef6",
+			"authentication": {},
+			"body": {},
+			"created": 1567371679639,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1567371679639,
+			"method": "GET",
+			"modified": 1567371697291,
+			"name": "get states",
+			"parameters": [],
+			"parentId": "fld_5b40cfe66c8c4040a19d0820fdc9cbfc",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ api_base  }}/states",
 			"_type": "request"
 		}
 	]
