@@ -14,7 +14,11 @@ export const patchEmployee = async function(
     return {
       statusCode: 200,
       body: 'User activated',
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PATCH,DELETE',
+        'Access-Control-Allow-Headers': 'Content-Type',
+      },
       isBase64Encoded: false,
     };
   } catch (e) {
@@ -22,11 +26,6 @@ export const patchEmployee = async function(
     return {
       statusCode: 400,
       body: 'error: ' + e,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PATCH,DELETE',
-        'Access-Control-Allow-Headers': 'Content-Type',
-      },
       isBase64Encoded: false,
     };
   }
