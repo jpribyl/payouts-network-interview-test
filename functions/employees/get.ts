@@ -11,7 +11,7 @@ export const getEmployees = async function(
   };
 
   let r;
-  if (sort !== 'undefined' && sortDirection !== 'undefined') {
+  if (sort && sortDirection) {
     r = await knex
       .select('employees.*', 'states.abbreviation as state_abbreviation')
       .from('employees')
