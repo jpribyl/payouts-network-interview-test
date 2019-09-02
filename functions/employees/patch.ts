@@ -24,6 +24,7 @@ export const patchEmployee = async function(
       body: 'error: ' + e,
       headers: {
         'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PATCH,DELETE',
       },
       isBase64Encoded: false,
     };

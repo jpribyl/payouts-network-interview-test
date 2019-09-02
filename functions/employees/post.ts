@@ -19,6 +19,7 @@ export const postEmployee = async function(
       body: JSON.stringify(r),
       headers: {
         'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PATCH,DELETE',
       },
       isBase64Encoded: false,
     };

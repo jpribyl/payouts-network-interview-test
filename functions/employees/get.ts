@@ -30,7 +30,8 @@ export const getEmployees = async function(
     statusCode: 200,
     body: JSON.stringify(r),
     headers: {
-      'Access-Control-Allow-Origin': '*', // Required for CORS support to work
+      'Access-Control-Allow-Origin': '*', // required for cors
+      'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PATCH,DELETE',
     },
     isBase64Encoded: false,
   };
