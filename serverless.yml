@@ -21,6 +21,13 @@ provider:
     # Add environment variables here such as mysql connection information, elasticsearch connection information, etc.
 
 functions:
+  getStates:
+    handler: handler.getStates
+    name: getStates
+    events:
+    - http:
+        path: states
+        method: get
   getEmployees:
     handler: handler.getEmployees
     name: getEmployees

@@ -29,7 +29,9 @@ export const getEmployees = async function(
   return {
     statusCode: 200,
     body: JSON.stringify(r),
-    headers: {},
+    headers: {
+      'Access-Control-Allow-Origin': '*', // Required for CORS support to work
+    },
     isBase64Encoded: false,
   };
 };
