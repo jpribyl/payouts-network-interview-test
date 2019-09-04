@@ -11,7 +11,11 @@ export default async function Validate(model, body) {
       status: 'fail',
       response: {
         statusCode: 400,
-        headers: {},
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PATCH,DELETE',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        },
         isBase64Encoded: false,
         body: 'error: ' + e,
       },
@@ -29,7 +33,11 @@ export default async function Validate(model, body) {
         status: 'fail',
         response: {
           statusCode: 400,
-          headers: {},
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PATCH,DELETE',
+            'Access-Control-Allow-Headers': 'Content-Type',
+          },
           isBase64Encoded: false,
           body: 'error: ' + key + 'MustBeUnique',
         },
